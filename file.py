@@ -1,3 +1,6 @@
+#功能：测试文件
+#说明
+import os
 
 file = open('info.txt','w')
 
@@ -8,3 +11,4 @@ file = open('info.txt','r')
 print(file.read())
  
 #删除文件
+os.remove('info.txt')
