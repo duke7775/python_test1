@@ -1,5 +1,5 @@
 #功能：测试文件
-#说明 引入os
+#引入os
 import os
 
 file = open('info.txt','w')
