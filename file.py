@@ -7,6 +7,7 @@ file = open('info.txt','w')
 file.write("hello\n")
 file.tell()
 print(file.tell())
+
 file.write("good")
 file.tell()
 print(file.tell())
@@ -14,6 +15,7 @@ print(file.tell())
 file = open('info.txt','r')
 file.seek(0)
 print(file.tell())
+
 print(file.read())
 print(file.tell())
 #删除文件
