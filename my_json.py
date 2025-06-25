@@ -1,4 +1,4 @@
-#说明 json文件
+#说明 json
 #引入模块
 import json
 import os
