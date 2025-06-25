@@ -1,13 +1,14 @@
+#说明 json文件
 #引入模块
 import json
 import os
 
 #定义数据
-data = {"name": "duke", "age":19, "days": 25}
+data = {"language":"Python","os":"Windows","keywords":["del","print"]}
 
 #写入
 with open("data.json", "w+") as f:
-    json.write(data,f)
+    json.dump(data,f)
     f.seek(0)
     content = json.load(f)
     print(content)
