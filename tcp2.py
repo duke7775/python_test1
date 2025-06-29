@@ -5,7 +5,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #监听端口
 s.bind(('127.0.0.1',9999))
-s.listen(100)
+s.listen(5)
 print('Waiting for connection...')
 
 def tcplink(sock, addr):
@@ -26,16 +26,3 @@ while True:
     # 创建新线程来处理TCP连接:
     t = threading.Thread(target=tcplink, args=(sock, addr))
     t.start()
-
-# 客户端
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect(('127.0.0.1', 9999))
-# 接收消息:
-print(s.recv(1024).decode('utf-8'))
-for data in [b'Michael', b'Tracy', b'Sarah']:
-    # 发送数据:
-    s.send(data)
-    print(s.recv(1024).decode('utf-8'))
-s.send(b'exit')
-s.close()
