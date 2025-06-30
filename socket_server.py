@@ -26,7 +26,6 @@ if is_created == True:
 print('Waiting for connection...')
 
 def tcplink(new_socket, addr):
-    is_connected = True
     print('Accept new connection from %s:%s...' % addr)
     new_socket.send(b'Welcome!')
     while True:
