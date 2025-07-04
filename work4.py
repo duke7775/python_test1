@@ -13,7 +13,7 @@ while success:
     
         print(f"You have {balance} baht in your account")
         break
-    if pin == "q":
+    elif pin == "q":
         exit()
 
     else: 
