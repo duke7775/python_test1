@@ -1,9 +1,10 @@
+import os
 balance = 10000
 attempts = 0 
 success = True 
 
 while success: 
-    pin = input("Enter your PIN: ") 
+    pin = input("Enter your PIN to withdraw cash or q to quit: ") 
      
     if pin == "4567": 
         print(f"{'-' * 20:^20}")
@@ -12,6 +13,8 @@ while success:
     
         print(f"You have {balance} baht in your account")
         break
+    if pin == "q":
+        exit()
 
     else: 
         print("Incorrect PIN!! Try Again.") 
@@ -37,6 +40,7 @@ while success:
                 print(f"|{amount:^20}|{balance:^20}|")
                 print(f"{'-' * 43:^43}")
                 input("Press enter to contiune.")
+                os.system("cls")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -54,6 +58,7 @@ while success:
                 print(f"|{amount:^20}|{balance:^20}|")
                 print(f"{'-' * 43:^43}")
                 input("Press enter to continue.")
+                os.system("cls")
         except ValueError:
             print("Invalid amount")
             
