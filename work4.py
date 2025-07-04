@@ -4,7 +4,7 @@ attempts = 0
 success = True 
 
 while success: 
-    pin = input("Enter your PIN to withdraw cash or q to quit: ") 
+    pin = input("Enter your PIN to withdraw/deposit cash or q to quit: ") 
      
     if pin == "4567": 
         print(f"{'-' * 20:^20}")
@@ -17,9 +17,8 @@ while success:
         exit()
 
     else: 
-        print("Incorrect PIN!! Try Again.") 
         attempts += 1 
-        print(f"You try {attempts} time ")
+        print(f"Attempt# {attempts}.Incorrect PIN! Try Again")
         if attempts == 3: 
             success = False 
             print("Your account is locked. Please contact bank.")
