@@ -6,7 +6,10 @@ while success:
     pin = input("Enter your PIN: ") 
      
     if pin == "4567": 
+        print(f"{'-' * 20:^20}")
         print("Correct Pin Entered!") 
+        print(f"{'-' * 20:^20}")
+    
         print(f"You have {balance} baht in your account")
         break
 
@@ -29,7 +32,10 @@ while success:
                 print("Deposit amount must be positive.")
             else:
                 balance += amount
-                print(f"|     DEPOSIT FUND    |  BALANCE   |\n|        {amount}         |   {balance}    |")
+                print(f"{'-' * 43:^43}")
+                print(f"|{'DEPOSIT FUND':^20}|{'BALANCE':^20}|")
+                print(f"|{amount:^20}|{balance:^20}|")
+                print(f"{'-' * 43:^43}")
                 input("Press enter to contiune.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
@@ -43,7 +49,10 @@ while success:
                 print("Your credit is not enough")
             else:
                 balance -= amount
-                print(f"|     WITHDRAW FUND   | BALANCE   |\n|       {amount}          |   {balance}    |")
+                print(f"{'-' * 43:^43}")
+                print(f"|{'WITHDRAWAL FUND':^20}|{'BALANCE':^20}|")
+                print(f"|{amount:^20}|{balance:^20}|")
+                print(f"{'-' * 43:^43}")
                 input("Press enter to continue.")
         except ValueError:
             print("Invalid amount")
