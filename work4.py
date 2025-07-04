@@ -19,7 +19,7 @@ while success:
             print("Your account is locked. Please contact bank.")
             exit()
 
-while True:
+while success:
 
     choice = input("Press 1 to deposit or 2 to withdraw:")  
     if choice == "1":
