@@ -13,6 +13,7 @@ while success:
     else: 
         print("Incorrect PIN!! Try Again.") 
         attempts += 1 
+        print(f"You try {attempts} time ")
         if attempts == 3: 
             success = False 
             print("Your account is locked. Please contact bank.")
@@ -28,7 +29,7 @@ while True:
                 print("Deposit amount must be positive.")
             else:
                 balance += amount
-                print(f"You have {balance} baht in your account")
+                print(f"|     DEPOSIT FUND    |  BALANCE   |\n|        {amount}         |   {balance}    |")
                 input("Press enter to contiune.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
@@ -42,7 +43,7 @@ while True:
                 print("Your credit is not enough")
             else:
                 balance -= amount
-                print(f"You have {balance} baht in your account")
+                print(f"|     WITHDRAW FUND   | BALANCE   |\n|       {amount}          |   {balance}    |")
                 input("Press enter to continue.")
         except ValueError:
             print("Invalid amount")
