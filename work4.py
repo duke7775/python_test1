@@ -25,7 +25,7 @@ while success:
     if choice == "1":
         try:
             amount = int(input("Enter an amount to deposit:"))
-            if amount < 0:
+            if amount <= 0:
                 print("Deposit amount must be positive.")
             else:
                 balance += amount
@@ -37,7 +37,7 @@ while success:
     elif choice == "2":
         try:
             amount = int(input("Enter an amount to withdraw:"))
-            if amount < 0:
+            if amount <= 0:
                 print("Withdrawal amount must be positive.")
             elif amount > balance:
                 print("Your credit is not enough")
