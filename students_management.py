@@ -4,19 +4,22 @@ import os
 from datetime import datetime
 
 #加载学生数据
-def load_students():
-    if os.path.exists('students.json'):
-        try:
-            with open('students.json', 'r') as f:
-                return json.load(f)
-        except:
-            return {}
+def read_json_file(file_path: str):
+    if not os.path.exists(file_path):
+        return {}
+    try:
+        with open(file_path, 'r') as file:
+          return json.load(file)
+    except Exception as e:
+           print(f"Error reading {file_path}: {e}")
     return {}
 
-#保存学生数据
-def save_students(students):
-    with open('students.json', 'w') as f:
-        json.dump(students, f)
+def write_json_file(file_path: str, data: dict):
+    try:
+        with open(file_path, 'w') as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+    except Exception as e:
+        print(f"Error writing {file_path}: {e}")
 
 #创建学生信息
 def create_student(students):
@@ -65,7 +68,9 @@ def delete_student(students):
 
 #主要功能
 def main():
-    students = load_students()
+    file_path = 'students.json'
+    students = read_json_file(file_path)
+
     while True:
         command = input("Enter command (create/list/delete/order/quit): ")
         if command == "create":
@@ -75,7 +80,8 @@ def main():
         elif command == "delete":
             delete_student(students)
         elif command == "quit":
-            save_students(students)
+            write_json_file(file_path, students)
+            print("Exiting the program.")
             break
         else:
             print("Invalid command.")
