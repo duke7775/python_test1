@@ -62,8 +62,12 @@ def delete_student(students):
         print(f"Student {name} not found.")
 
 #按数学分数排序
-
-
+def order_students_by_math(students):
+    sorted_students = sorted(students.values(), key=lambda x: x['math_score'], reverse=True)
+    for student in sorted_students:
+        print(f"Name: {student['name']}, Math Score: {student['math_score']}")
+    if not sorted_students:
+        print("No students found.")
 
 
 #主要功能
@@ -79,6 +83,8 @@ def main():
             list_students(students)
         elif command == "delete":
             delete_student(students)
+        elif command == "order":
+            order_students_by_math(students)
         elif command == "quit":
             write_json_file(file_path, students)
             print("Exiting the program.")
@@ -87,4 +93,5 @@ def main():
             print("Invalid command.")
 
 
-if __name__ == "__main__": main()      
+if __name__ == "__main__":
+    main()
