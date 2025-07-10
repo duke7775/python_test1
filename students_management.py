@@ -63,7 +63,7 @@ def delete_student(students):
 
 #按数学分数排序
 def order_students_by_math(students):
-    sorted_students = sorted(students.values(), key=lambda x: x['math_score'], reverse=True)
+    sorted_students = sorted(students.values(), key=lambda x: x['math_score'])
     for student in sorted_students:
         print(f"Name: {student['name']}, Math Score: {student['math_score']}")
     if not sorted_students:
