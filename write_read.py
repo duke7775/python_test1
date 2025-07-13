@@ -44,11 +44,11 @@ def write_random(file_path):
 
 
 
-def process_file(file_path):
+def main():
+    file_path = r"D:\python\content.txt"
     print("Random Read:", read_random(file_path))
     print("Row Read:", read_row(file_path))
     print("Write Random:", write_random(file_path))
  
 if __name__ == "__main__":
-    file_path = r"D:\python\content.txt"
-    process_file(file_path)
+    main()
