@@ -18,10 +18,7 @@ def read_excel_file(filename='test.xlsx')-> None:
     value_a1 = sheet["A1"].value
     value_a2 = sheet["A2"].value
     print(f"A1 值：{value_a1}, A2 值：{value_a2}")
-    value_a1 = value_a1 
-    value_a2 = value_a2 
-    sum_value = value_a1 + value_a2
-    sheet["A3"] = sum_value
+    sheet["A3"] = value_a1 + value_a2
     workbook.save(filename)
 
 def main():
