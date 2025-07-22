@@ -30,11 +30,6 @@ class Student:
         print( f"Name: {self.name}, Age: {self.age}, Nationality: {self.nationality}, Gender: {self.gender}, Math Score: {self.math_score}, English Score: {self.english_score}, Creation Time: {self.creation_time}")
     
 
-    def __del__(self):
-        print("调用\"__del__\"方法")
-        print(f"Student {self.name} deleted at {datetime.datetime.now()}")
-        
-
 def main() -> None:
     student = Student(name="Duke", age=19, nationality="China", gender="M", math_score=90, english_score=85)
     student.create()
