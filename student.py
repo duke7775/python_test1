@@ -2,12 +2,12 @@
 import datetime
 
 class Student:
-    name =  str("Duke")
-    age = int(19)
-    nationality = str("China")
-    gender = str("M")
-    math_score = int(90)
-    english_score = int(85)
+    name: str = ""
+    age: int = 0
+    nationality: str = ""
+    gender: str = ""
+    math_score: int = 0
+    english_score: int = 0
 
     def __init__(self, name, age, nationality, gender, math_score, english_score):
         print("调用\"__init__\"方法")
@@ -39,7 +39,6 @@ def main() -> None:
     student = Student(name="Duke", age=19, nationality="China", gender="M", math_score=90, english_score=85)
     student.create()
     student.list()
-    del student
 
 if __name__ == "__main__":
     main()
